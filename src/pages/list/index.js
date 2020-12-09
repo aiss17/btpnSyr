@@ -16,6 +16,27 @@ class ListUser extends Component {
         }
     }
 
+    logicalTest() {
+        let dalamSumur = 20;
+        let siangNaik = 5;
+        let malamTurun = 4;
+        let manjat = 0;
+        let banyakHari = 0;
+
+        for(var i = 1; i <= dalamSumur; i++) {
+            if(manjat < dalamSumur && manjat != dalamSumur) {
+                manjat = manjat + siangNaik;
+
+                if(manjat < dalamSumur && manjat != dalamSumur) {
+                    manjat = manjat - malamTurun;
+                }
+                banyakHari = banyakHari + 1;
+            }
+        }
+        console.log("Siput telah manjat sepanjang => " + manjat);
+        console.log("Dan dia menempuh selama => " + banyakHari + " hari")
+    }
+
     backPressed = () => {
 		Alert.alert(
             'Exit App',
@@ -35,6 +56,7 @@ class ListUser extends Component {
 
     componentDidMount() {
         this.getListUser()
+        this.logicalTest()
 		BackHandler.addEventListener('hardwareBackPress', this.backPressed);
 	}
 	componentWillUnmount() {
